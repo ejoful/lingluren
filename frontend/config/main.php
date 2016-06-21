@@ -28,14 +28,16 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
+        
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'showScriptName' => false,
+    		'showScriptName' => false,
+    		'suffix'=>'.html',
             'rules' => [
+            	'<controller:\w+>/<action:\w+>' => '<controller>/<action>',
             ],
         ],
-        */
+        
     ],
     'params' => $params,
 ];
