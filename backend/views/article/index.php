@@ -23,12 +23,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'title',
-            'des:ntext',
+//             'des:ntext',
             'img',
-            'path',
+//             'path',
             // 'url:url',
-            // 'indexs',
-            // 'position',
+            'indexs',
+            'position',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -30,11 +30,13 @@ class Slide extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'img', 'path', 'url', 'position'], 'required'],
+            [['title', 'path', 'url', 'position'], 'required'],
             [['position'], 'integer'],
             [['title', 'path'], 'string', 'max' => 300],
             [['img'], 'string', 'max' => 100],
+        	[['img'],'file', 'extensions' => ['jpg','jpeg', 'png'], 'mimeTypes' => ['image/jpeg', 'image/png']],
             [['url'], 'string', 'max' => 200],
+        	[['url'], 'url'],
         ];
     }
 

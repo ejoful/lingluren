@@ -8,6 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * ArticleController implements the CRUD actions for Article model.
@@ -65,8 +66,25 @@ class ArticleController extends Controller
     {
         $model = new Article();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+    $rootPath = Yii::$app->params['upload_img_dir'];
+        if ($model->load(Yii::$app->request->post())) {
+        	$image = UploadedFile::getInstance($model, 'img');
+        	
+        	if ($image) {
+        		$ext = $image->getExtension();
+        		$randName = time() . rand(1000, 9999) . '.' . $ext;
+        		$rootPath .= 'article/';
+        		if (!file_exists($rootPath)) {
+        			mkdir($rootPath, 0777, true);
+        		}
+        		$image->saveAs($rootPath . $randName);
+        		$model->img = $randName;
+        		$model->path = $rootPath . $randName;
+        	}
+        	        	
+        	if ($model->save()) {
+        		return $this->redirect(['view', 'id' => $model->id]);
+        	}
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -82,10 +100,33 @@ class ArticleController extends Controller
      */
     public function actionUpdate($id)
     {
+    $rootPath = Yii::$app->params['upload_img_dir'];
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $old_img = $model->img;
+        $old_path = $model->path;
+        
+        if ($model->load(Yii::$app->request->post())) {
+        	$image = UploadedFile::getInstance($model, 'img');
+        	
+        	if ($image) {
+        		$ext = $image->getExtension();
+        		$randName = time() . rand(1000, 9999) . "." . $ext;
+        		$rootPath .= "slide/";
+        		if (!file_exists($rootPath)) {
+        			mkdir($rootPath, 0777, true);
+        		}
+        		$image->saveAs($rootPath . $randName);
+        		$model->img = $randName;
+        		$model->path = $rootPath . $randName;
+        		//删除图片
+        		@unlink($old_path);
+        	} else {
+        		$model->img = $old_img;
+        	}
+        	if ($model->save()) {
+        		return $this->redirect(['view', 'id' => $model->id]);
+        	}
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -101,6 +142,9 @@ class ArticleController extends Controller
      */
     public function actionDelete($id)
     {
+        //删除图片
+    	@unlink($this->findModel($id)->path);
+    	
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);

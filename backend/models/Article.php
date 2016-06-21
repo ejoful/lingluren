@@ -32,11 +32,13 @@ class Article extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'des', 'img', 'path', 'url', 'indexs', 'position'], 'required'],
+            [['title', 'des', 'path', 'url', 'indexs', 'position'], 'required'],
             [['des'], 'string'],
             [['indexs', 'position'], 'integer'],
             [['title', 'path', 'url'], 'string', 'max' => 300],
             [['img'], 'string', 'max' => 100],
+        	[['url'], 'url'],
+        	[['img'],'file', 'extensions' => ['jpg','jpeg', 'png'], 'mimeTypes' => ['image/jpeg', 'image/png']],
         ];
     }
 

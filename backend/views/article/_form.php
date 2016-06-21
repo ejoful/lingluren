@@ -10,15 +10,20 @@ use yii\widgets\ActiveForm;
 
 <div class="article-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin([
+        'id' => "article_form",
+        'options' => ['enctype' => 'multipart/form-data'],
+    ]); ?>
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'des')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'img')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'img')->fileInput(['accept' => "image/png,image/jpeg"]) ?>
+	<p class="hint">（请上传1280x480尺寸的图片）</p>
 
-    <?= $form->field($model, 'path')->textInput(['maxlength' => true]) ?>
+    <?php
+    //$form->field($model, 'path')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'url')->textInput(['maxlength' => true]) ?>
 
