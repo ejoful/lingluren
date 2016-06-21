@@ -11,12 +11,18 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+	    'user' => [
+	        'class' => 'dektrium\user\Module',
+	    	'enableConfirmation' => false,
+	    	'admins' => ['admin'],
+	    ],
+	],
     'components' => [
-        'user' => [
-            'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
-        ],
+//         'user' => [
+//             'identityClass' => 'common\models\User',
+//             'enableAutoLogin' => true,
+//         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [

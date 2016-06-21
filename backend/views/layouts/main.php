@@ -36,14 +36,16 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
-    	['label' => 'slide', 'url' => ['/slide/index']],
-    	['label' => 'article', 'url' => ['/article/index']],
+    	['label' => 'Slide', 'url' => ['/slide/index']],
+    	['label' => 'Article', 'url' => ['/article/index']],
+    	['label' => 'User', 'url' => ['/user/admin/index']],
+    	['label' => 'Register', 'url' => ['/user/registration/register']]
     ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+        $menuItems[] = ['label' => 'Login', 'url' => ['/user/security/login']];
     } else {
         $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
+            . Html::beginForm(['/user/security/logout'], 'post')
             . Html::submitButton(
                 'Logout (' . Yii::$app->user->identity->username . ')',
                 ['class' => 'btn btn-link']
