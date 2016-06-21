@@ -39,7 +39,7 @@ AppAsset::register($this);
     	['label' => 'Slide', 'url' => ['/slide/index']],
     	['label' => 'Article', 'url' => ['/article/index']],
     	['label' => 'User', 'url' => ['/user/admin/index']],
-    	['label' => 'Register', 'url' => ['/user/registration/register']]
+    	
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/user/security/login']];

@@ -15,6 +15,7 @@ return [
 	    'user' => [
 	        'class' => 'dektrium\user\Module',
 	    	'enableConfirmation' => false,
+	    	'enableRegistration' => false,
 	    	'admins' => ['admin'],
 	    ],
 	],
