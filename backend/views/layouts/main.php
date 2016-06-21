@@ -38,12 +38,14 @@ AppAsset::register($this);
         ['label' => 'Home', 'url' => ['/site/index']],
     	['label' => 'Slide', 'url' => ['/slide/index']],
     	['label' => 'Article', 'url' => ['/article/index']],
-    	['label' => 'User', 'url' => ['/user/admin/index']],
     	
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/user/security/login']];
     } else {
+    	if(Yii::$app->user->identity->username == 'admin') {
+    		$menuItems[] = ['label' => 'User', 'url' => ['/user/admin/index']];
+    	}
         $menuItems[] = '<li>'
             . Html::beginForm(['/user/security/logout'], 'post')
             . Html::submitButton(
