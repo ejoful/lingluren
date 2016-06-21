@@ -5,10 +5,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="format-detection" content="telephone=no">
-<link rel="dns-prefetch" href="//res.wx.qq.com">
-<link rel="dns-prefetch" href="//mmbiz.qpic.cn">
-<link rel="shortcut icon" type="image/x-icon" href="http://res.wx.qq.com/mmbizwap/zh_CN/htmledition/images/icon/common/favicon22c41b.ico">
-<title>以太·创业指南</title>
+<title></title>
         
 <link rel="stylesheet" href="http://res.wx.qq.com/mmbizwap/zh_CN/htmledition/style/page/homepage/index23b0e8.css">
 
@@ -357,7 +354,14 @@
 
     </div>
 </div>
+<script>
+$(".tab_hd_inner .item").click(function(){
+	this.addClass('active');
+	this.siblings().removeClass('active');
+});
 
+
+</script>
         
 
 
