@@ -66,9 +66,10 @@ class ArticleController extends Controller
     {
         $model = new Article();
 
-    $rootPath = Yii::$app->params['upload_img_dir'];
+    $rootPath = Yii::getAlias("@frontend")."/web/" . Yii::$app->params['upload_img_dir'];
+        
         if ($model->load(Yii::$app->request->post())) {
-        	$image = UploadedFile::getInstance($model, 'img');
+        $image = UploadedFile::getInstance($model, 'img');
         	
         	if ($image) {
         		$ext = $image->getExtension();
@@ -79,11 +80,14 @@ class ArticleController extends Controller
         		}
         		$image->saveAs($rootPath . $randName);
         		$model->img = $randName;
-        		$model->path = $rootPath . $randName;
+        		$model->path = Yii::$app->params['upload_img_dir'] . 'slide/' . $randName;
         	}
         	        	
         	if ($model->save()) {
         		return $this->redirect(['view', 'id' => $model->id]);
+        	} else {
+        		//没有保存成功，删除图片
+        		@unlink($rootPath . $randName);
         	}
         } else {
             return $this->render('create', [
@@ -100,9 +104,9 @@ class ArticleController extends Controller
      */
     public function actionUpdate($id)
     {
-    $rootPath = Yii::$app->params['upload_img_dir'];
         $model = $this->findModel($id);
 
+    	$rootPath = Yii::getAlias("@frontend")."/web/" . Yii::$app->params['upload_img_dir'];
         $old_img = $model->img;
         $old_path = $model->path;
         
@@ -112,15 +116,15 @@ class ArticleController extends Controller
         	if ($image) {
         		$ext = $image->getExtension();
         		$randName = time() . rand(1000, 9999) . "." . $ext;
-        		$rootPath .= "slide/";
+        		$rootPath .= "article/";
         		if (!file_exists($rootPath)) {
         			mkdir($rootPath, 0777, true);
         		}
         		$image->saveAs($rootPath . $randName);
         		$model->img = $randName;
-        		$model->path = $rootPath . $randName;
+        		$model->path = Yii::$app->params['upload_img_dir'] . 'article/' . $randName;
         		//删除图片
-        		@unlink($old_path);
+        		@unlink(Yii::getAlias("@frontend")."/web/" . $old_path);
         	} else {
         		$model->img = $old_img;
         	}
@@ -143,7 +147,7 @@ class ArticleController extends Controller
     public function actionDelete($id)
     {
         //删除图片
-    	@unlink($this->findModel($id)->path);
+    	@unlink(Yii::getAlias("@frontend")."/web/" . $this->findModel($id)->path);
     	
         $this->findModel($id)->delete();
 
