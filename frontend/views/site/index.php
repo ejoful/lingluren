@@ -1,53 +1,59 @@
 <?php
 
 /* @var $this yii\web\View */
-
+use yii\helpers\Url;
 $this->title = 'My Yii Application';
 ?>
-<div class="site-index">
-
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
-
-    </div>
+<div class="tab_bd">
+<div class="article_list article_list_0">
+		<?php 
+		$str = '';
+			foreach($list0 as $value) {
+				$str .= "<a class='list_item js_post' href='$value->url'>";
+				$str .= "<div class='cover'>";
+				$str .= "<img class='img js_img' src='" . Url::to('@web/' . $value->path, true) . "'>";
+				$str .= "</div>";
+				$str .= "<div class='cont'>";
+				$str .= "<h2 class='title js_title'>$value->title</h2>";
+				$str .= "<p class='desc'>$value->des</p>";
+				$str .= "</div>";
+				$str .= "</a>";
+			}
+		echo $str;
+		?>
+	</div>
+	<div class="article_list article_list_1" style="display: none;">
+		<?php 
+		$str = '';
+			foreach($list1 as $value) {
+				$str .= "<a class='list_item js_post' href='$value->url'>";
+				$str .= "<div class='cover'>";
+				$str .= "<img class='img js_img' src='" . Url::to('@web/' . $value->path, true) . "'>";
+				$str .= "</div>";
+				$str .= "<div class='cont'>";
+				$str .= "<h2 class='title js_title'>$value->title</h2>";
+				$str .= "<p class='desc'>$value->des</p>";
+				$str .= "</div>";
+				$str .= "</a>";
+			}
+			echo $str;
+		?>
+	</div>
+	<div class="article_list article_list_2" style="display: none;">
+		<?php 
+		$str = '';
+			foreach($list2 as $value) {
+				$str .= "<a class='list_item js_post' href='$value->url'>";
+				$str .= "<div class='cover'>";
+				$str .= "<img class='img js_img' src='" . Url::to('@web/' . $value->path, true) . "'>";
+				$str .= "</div>";
+				$str .= "<div class='cont'>";
+				$str .= "<h2 class='title js_title'>$value->title</h2>";
+				$str .= "<p class='desc'>$value->des</p>";
+				$str .= "</div>";
+				$str .= "</a>";
+			}
+			echo $str;
+		?>
+	</div>
 </div>

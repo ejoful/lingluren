@@ -35,6 +35,7 @@ return [
     		'suffix'=>'.html',
             'rules' => [
             	'<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+            	'<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
             ],
         ],
         
