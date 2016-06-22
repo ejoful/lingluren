@@ -31,27 +31,7 @@ AppAsset::register($this);
 <body id="" class="zh_CN" ontouchstart="">
 <?php $this->beginBody() ?>
 <div class="container">
-    <div id="js_plugins_loading" class="loading" style="display: none;">加载中</div>
-    <div id="js_plugins" style="visibility: visible;">
-	    <div class="slider js_plugin" id="namespace_0" data-pid="1">
-    		<div class="swiper" id='swiper' style="height: 180px; width: 5715px;">
-				<div class="item js_post" style="width: 1905px; height: 180px;">
-						<div class="img js_img" style="background-image: url('./img/bg.jpg');"></div>
-						<p class="desc js_title">领路人学习帮助计划</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="tab js_plugin" id="namespace_1" data-pid="2">
-		<div class="tab_hd">
-			<div class="tab_hd_inner">
-				<div type="index" data-index="0" class="item active">领路指南</div>
-				<div type="index" data-index="1" class="item">学习经验</div>
-				<div type="index" data-index="2" class="item">报考常识</div>
-			</div>
-		</div>
-	        <?= $content ?>
-	</div>
+<?= $content ?>
 </div>
 
 <script>
