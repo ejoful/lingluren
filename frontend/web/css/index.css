@@ -1,0 +1,111 @@
+/* slider bar */
+.clear{
+    clear: both;
+}
+.unslider {
+    padding-top: 10px;
+    background: url('../img/cmww2/index-banner-bg.jpg') repeat-x #fff;
+}
+.slider-bar{
+    width:100%;
+    height:250px;
+    margin:0 auto;
+    position:relative;
+    overflow:hidden;
+}
+.slider-bar ul{
+    overflow:hidden;
+    width:100%;
+}
+.slider-bar li{
+    float:left;
+    position:relative;
+    font-size:0;
+}
+.slider-bar img{
+    width:100%;
+    height:200px;
+}
+.slider-bar p{
+    color:#fff;
+    font-size:24px;
+    line-height:44px;
+    position:absolute;
+    left:100px;
+    top:490px;
+}
+.slider-bar .news-bar{
+    background:#e9e9e9;
+    height:50px;
+    overflow:hidden;
+}
+.slider-bar h2{
+    font-size:10px;
+    color:#000a02;
+    margin:20px 0 14px 20px
+}
+.slider-bar span{
+    margin-left:80px;
+    display:block;
+    width:100%;
+    height:50px;
+    overflow:hidden;
+    line-height: 25px;
+    font-size:17px;
+    color:#000a02;
+}
+.slider-bar .news-bar a{
+    line-height:40px;
+    width:160px;
+    background:#e3b934;
+    float:right;
+    margin:40px 100px 0 0;
+    color:#000a02;
+    text-align:center;
+    font-size:18px;
+}
+.slider-bar .prev,.slider-bar .next{
+    background:rgba(109,112,112,.6);
+    color:#e6e6e6;
+    width:40px;
+    height:40px;
+    position:absolute;
+    top:70px;
+    text-align:center;
+    line-height:40px;
+    font-size:22px;
+}
+.slider-bar .prev:hover,.slider-bar .next:hover{
+    background:rgba(109,112,112,.8);
+}
+.slider-bar .pagination-bar{
+    text-align:center;
+    font-size:0;
+    height:20px;
+    padding-top:10px;
+}
+.slider-bar .pagination-bar em{
+    cursor:pointer;
+    background:#6e6e6e;
+    width:10px;
+    height:10px;
+    display:inline-block;
+    margin-right:12px;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+}
+.slider-bar .pagination-bar em:last-child{
+    margin-right:0;
+}
+.slider-bar .pagination-bar .current{
+    background:#e3b934;
+}
+.slider-bar .prev{
+    left:25px;
+}
+.slider-bar .next{
+    right:25px;
+}

@@ -19,7 +19,7 @@ use yii\rbac\PhpManager;
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'img')->fileInput(['accept' => "image/png,image/jpeg"]) ?>
-	<p class="hint">（请上传1280x480尺寸的图片）</p>
+	<p class="hint">（请上传450x200尺寸的图片）</p>
 
     <?php
     // $form->field($model, 'path')->textInput(['maxlength' => true]) ?>

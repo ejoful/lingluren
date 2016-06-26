@@ -4,29 +4,23 @@
 use yii\helpers\Url;
 $this->title = 'My Yii Application';
 ?>
-<div class="banner-wrap top-banner">
-	<div class="banner-mask">
-		<ul class="banner-list">
-		<?php 
-             $li_str = '';
+<div class="slider-bar">
+    <ul>
+    <?php 
              $slide_str = '';
              foreach($slides as $key => $value) {
-                	if ($key == 0) {
-                			$li_str .= "<li class='cur'></li>";
-                	} else {
-                			$li_str .= "<li></li>";
-                	}
                 	$slide_str .= '<li><a href="' .$value->url .'">';
-            		$slide_str .= '<img src="' . Url::to('@web/' . $value->path, true) . '"/></a></li>';
+            		$slide_str .= '<img src="' . Url::to('@web/' . $value->path, true) . '"/></a>';
+            		$slide_str .= '<div class="news-bar"><h2>' . $value->title . '</h2></div></li>';
              }
              echo $slide_str;
           ?>
-           </ul>
-           <a class="arrow left" ></a>
-           <a class="arrow right"></a>
-    </div>
-    <ul class="pagination"><?= $li_str ?></ul>
+    </ul>
+
+    <a href="javascript:void(0);" class="prev">&lt;</a>
+    <a href="javascript:void(0);" class="next">&gt;</a>
 </div>
+
 
 <div class="tab js_plugin" id="namespace_1" data-pid="2">
 	<div class="tab_hd">
@@ -36,7 +30,7 @@ $this->title = 'My Yii Application';
 			<div type="index" data-index="2" class="item">报考常识</div>
 		</div>
 	</div>
-        <?= $content ?>
+        
 </div>
 <div class="tab_bd">
 <div class="article_list article_list_0">

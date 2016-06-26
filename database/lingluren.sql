@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2016-06-21 21:40:17
+-- Generation Time: 2016-06-26 18:55:17
 -- 服务器版本： 5.5.47-MariaDB
 -- PHP Version: 5.4.16
 
@@ -38,14 +38,17 @@ CREATE TABLE IF NOT EXISTS `tbl_article` (
   `url` varchar(300) NOT NULL,
   `indexs` tinyint(4) NOT NULL,
   `position` tinyint(4) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `tbl_article`
 --
 
 INSERT INTO `tbl_article` (`id`, `title`, `des`, `img`, `path`, `url`, `indexs`, `position`) VALUES
-(1, 'sdf', 'sdfdsf', '14665127615880.png', 'uploads/img/article/14665127615880.png', 'http://fanyi.baidu.com', 0, 1);
+(1, '考研小白必读', '很多人问我为什么跨考，其实很简单，我觉得自己很难在本专业发挥出色。我读得懂本专业，成绩优良，该拿的奖也拿过，但始终无法让自己有成就感。相比我一直是有管理经验，看管理书籍很有感觉，个性也喜欢与人打交道，种种因素最终选择跨考管理类。', 'xiaobai.jpg', 'uploads/img/article/xiaobai.jpg', 'http://blog.163.com/fengziyue_hehe/blog/static/262181034201659112531250/#', 0, 1),
+(2, '避免以下动机，考研就会成功', '为什么要考研？这是每位考研学子都应该问自己的问题。以下是小编给大家整理的几种错误的考研动机和危险心理，考研er千万不要成为其中一派哟！...', '14666054043778.jpg', 'uploads/img/article/14666054043778.jpg', 'http://blog.163.com/fengziyue_hehe/blog/static/26218103420165138937688/', 0, 2),
+(3, '单词不会看这里吧', '单词是学英语必过的一道坎。但是很多人背单词又背得很痛苦，为什么呢？归根到底就是两点：没有毅力和没有良好的背单词习惯。首先，坚持是必须的，无论你上过多少个词汇班，如果回家不复习，不看笔记，谁也救不了你。', 'danci.jpg', 'uploads/article/danci.jpg', 'http://blog.163.com/fengziyue_hehe/blog/static/262181034201651101051987', 1, 1),
+(4, '高数复习指南', '1.学习阶段划分 一阶基础全面复习(3月～6月) 二阶强化熟悉题型(7月～10月) 三阶模考查缺补漏(11月～12月15日) 四阶点睛保持状态(12月16日～考试前)', 'danci.jpg', 'uploads/article/danci.jpg', 'http://blog.163.com/fengziyue_hehe/blog/static/262181034201651101051987', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -116,14 +119,16 @@ CREATE TABLE IF NOT EXISTS `tbl_slide` (
   `path` varchar(300) NOT NULL,
   `url` varchar(200) NOT NULL,
   `position` tinyint(4) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `tbl_slide`
 --
 
 INSERT INTO `tbl_slide` (`id`, `title`, `img`, `path`, `url`, `position`) VALUES
-(1, 'fdsf', '14665122142245.png', 'uploads/img/slide/14665122142245.png', 'http://www.baidu.com', 3);
+(1, 'fdsf', 'bg.jpg', 'uploads/img/slide/bg.jpg', 'http://www.baidu.com', 3),
+(3, 'sdfsdf', '14669374623702.jpg', 'uploads/img/slide/14669374623702.jpg', 'https://www.baidu.com/s?wd=%E9%98%BF%E9%87%8C%E4%BC%A0&rsv_spt=1&rsv_iqid=0xa98699310013664f&issp=1&f=8&rsv_bp=0&rsv_idx=2&ie=utf-8&tn=baiduhome_pg&rsv_enter=1&rsv_sug3=2&rsv_sug1=1&rsv_sug7=001&rsv_n', 1),
+(4, '一个“菜鸟企业家” 的蜕变成长路 ——读《阿里传：这里是阿里巴巴的世界》', '14669375264486.jpg', 'uploads/img/slide/14669375264486.jpg', 'http://money.163.com/15/0902/02/B2FMJ51H00253B0H.html', 1);
 
 -- --------------------------------------------------------
 
@@ -246,12 +251,12 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_article`
 --
 ALTER TABLE `tbl_article`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `tbl_slide`
 --
 ALTER TABLE `tbl_slide`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `tbl_social_account`
 --

@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use backend\models\Article;
+use backend\models\Slide;
 
 /**
  * Site controller
@@ -79,8 +80,12 @@ class SiteController extends Controller
     	->orderBy('position Asc')
     	->all();
     	
+    	$slides = Slide::find()
+    	->orderBy('position Asc')
+    	->all();
+    	
 //     	print_r($list0);die();
-        return $this->render('index',['list0' => $list0, 'list1' => $list1, 'list2' => $list2]);
+        return $this->render('index',['slides' => $slides,'list0' => $list0, 'list1' => $list1, 'list2' => $list2]);
     }
 
 }

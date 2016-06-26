@@ -80,7 +80,7 @@ class ArticleController extends Controller
         		}
         		$image->saveAs($rootPath . $randName);
         		$model->img = $randName;
-        		$model->path = Yii::$app->params['upload_img_dir'] . 'slide/' . $randName;
+        		$model->path = Yii::$app->params['upload_img_dir'] . 'article/' . $randName;
         	}
         	        	
         	if ($model->save()) {
