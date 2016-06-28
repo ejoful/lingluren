@@ -2,10 +2,7 @@
 .clear{
     clear: both;
 }
-.unslider {
-    padding-top: 10px;
-    background: url('../img/cmww2/index-banner-bg.jpg') repeat-x #fff;
-}
+
 .slider-bar{
     width:100%;
     height:250px;
