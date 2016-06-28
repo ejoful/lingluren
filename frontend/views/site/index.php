@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 use yii\helpers\Url;
-$this->title = '领路人';
+$this->title = '领路人学习计划';
 ?>
 <div class="slider-bar">
     <ul>
