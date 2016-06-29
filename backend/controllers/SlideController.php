@@ -26,7 +26,6 @@ class SlideController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'view'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
