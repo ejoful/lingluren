@@ -5,7 +5,7 @@
 
 .slider-bar{
     width:100%;
-    height:250px;
+    height:240px;
     margin:0 auto;
     position:relative;
     overflow:hidden;
@@ -33,13 +33,15 @@
 }
 .slider-bar .news-bar{
     background:#e9e9e9;
-    height:50px;
+    height:40px;
     overflow:hidden;
 }
 .slider-bar h2{
-    font-size:10px;
-    color:#e3b934;
-    margin:20px 0 14px 20px
+    font-size: 14px;
+    color: #e3b934;
+    margin-left: 20px;
+    line-height: 40px;
+    font-weight: bolder;
 }
 .slider-bar span{
     margin-left:80px;
