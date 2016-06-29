@@ -65,11 +65,6 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-    	$list0 = Article::find()
-    	->where(['indexs' => 0])
-    	->orderBy('position Asc')
-    	->all();
-    	
     	$list1 = Article::find()
     	->where(['indexs' => 1])
     	->orderBy('position Asc')
@@ -80,12 +75,17 @@ class SiteController extends Controller
     	->orderBy('position Asc')
     	->all();
     	
+    	$list3 = Article::find()
+    	->where(['indexs' => 3])
+    	->orderBy('position Asc')
+    	->all();
+    	
     	$slides = Slide::find()
     	->orderBy('position Asc')
     	->all();
     	
 //     	print_r($list0);die();
-        return $this->render('index',['slides' => $slides,'list0' => $list0, 'list1' => $list1, 'list2' => $list2]);
+        return $this->render('index',['slides' => $slides,'list1' => $list1, 'list2' => $list2, 'list3' => $list3]);
     }
 
 }
