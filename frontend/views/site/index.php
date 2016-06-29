@@ -25,9 +25,9 @@ $this->title = '领路人学习计划';
 <div class="tab js_plugin" id="namespace_1" data-pid="2">
 	<div class="tab_hd">
 		<div class="tab_hd_inner">
-			<div type="index" data-index="0" class="item active">领路指南</div>
-			<div type="index" data-index="1" class="item">学习经验</div>
-			<div type="index" data-index="2" class="item">报考常识</div>
+			<div type="index" data-index="1" class="item active">领路指南</div>
+			<div type="index" data-index="2" class="item">学习经验</div>
+			<div type="index" data-index="3" class="item">报考常识</div>
 		</div>
 	</div>
         
@@ -36,7 +36,7 @@ $this->title = '领路人学习计划';
 <div class="article_list article_list_1">
 		<?php 
 		$str = '';
-			foreach($list0 as $value) {
+			foreach($list1 as $value) {
 				$str .= "<a class='list_item js_post' href='$value->url'>";
 				$str .= "<div class='cover'>";
 				$str .= "<img class='img js_img' src='" . Url::to('@web/' . $value->path, true) . "'>";
@@ -53,7 +53,7 @@ $this->title = '领路人学习计划';
 	<div class="article_list article_list_2" style="display: none;">
 		<?php 
 		$str = '';
-			foreach($list1 as $value) {
+			foreach($list2 as $value) {
 				$str .= "<a class='list_item js_post' href='$value->url'>";
 				$str .= "<div class='cover'>";
 				$str .= "<img class='img js_img' src='" . Url::to('@web/' . $value->path, true) . "'>";
@@ -70,7 +70,7 @@ $this->title = '领路人学习计划';
 	<div class="article_list article_list_3" style="display: none;">
 		<?php 
 		$str = '';
-			foreach($list2 as $value) {
+			foreach($list3 as $value) {
 				$str .= "<a class='list_item js_post' href='$value->url'>";
 				$str .= "<div class='cover'>";
 				$str .= "<img class='img js_img' src='" . Url::to('@web/' . $value->path, true) . "'>";
