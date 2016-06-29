@@ -33,7 +33,7 @@ $this->title = '领路人学习计划';
         
 </div>
 <div class="tab_bd">
-<div class="article_list article_list_0">
+<div class="article_list article_list_1">
 		<?php 
 		$str = '';
 			foreach($list0 as $value) {
@@ -50,7 +50,7 @@ $this->title = '领路人学习计划';
 		echo $str;
 		?>
 	</div>
-	<div class="article_list article_list_1" style="display: none;">
+	<div class="article_list article_list_2" style="display: none;">
 		<?php 
 		$str = '';
 			foreach($list1 as $value) {
@@ -67,7 +67,7 @@ $this->title = '领路人学习计划';
 			echo $str;
 		?>
 	</div>
-	<div class="article_list article_list_2" style="display: none;">
+	<div class="article_list article_list_3" style="display: none;">
 		<?php 
 		$str = '';
 			foreach($list2 as $value) {
